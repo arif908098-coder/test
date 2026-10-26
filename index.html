@@ -33,7 +33,51 @@
             <button id="caseButton">OPEN CASE</button>
         </div>
     </section>
+    <section class="detective-game" id="detectiveGame">
+        <p class="tag">DETECTIVE CHALLENGE</p>
+        <h2>CASE #001: THE MISSING NECKLACE</h2>
+        <p class="game-intro">
+            A diamond necklace disappeared from a locked room at 8 PM.
+            Three suspects were questioned. Examine their statements
+            and identify who is lying!
+        </p>
 
+        <div class="suspects">
+            <div class="suspect-card">
+                <h3>🧑 Suspect 1: Alex</h3>
+                <p>"I was in the garden from 7:45 PM to 8:15 PM."</p>
+            </div>
+
+            <div class="suspect-card">
+                <h3>🧑 Suspect 2: Maya</h3>
+                <p>"I saw Alex enter the house at 7:55 PM."</p>
+            </div>
+
+            <div class="suspect-card">
+                <h3>🧑 Suspect 3: Ryan</h3>
+                <p>"I was reading in the library all evening."</p>
+            </div>
+        </div>
+
+        <div class="clue-box">
+            <h3>🔎 Evidence Found</h3>
+            <p>
+                A muddy footprint was discovered inside the house.
+                It matches the shoes Alex wore that evening.
+            </p>
+        </div>
+
+        <h3 class="question">Who is your main suspect?</h3>
+
+        <div class="suspect-options">
+            <button class="suspect-choice" data-suspect="Alex">Alex</button>
+            <button class="suspect-choice" data-suspect="Maya">Maya</button>
+            <button class="suspect-choice" data-suspect="Ryan">Ryan</button>
+        </div>
+
+        <p id="gameResult" class="game-result" aria-live="polite"></p>
+        <button id="retryCase" hidden>TRY AGAIN</button>
+    </section>
     <footer>
         <p>© 2026 Mystery Files · Fictional Detective Game</p>
     </footer>
@@ -48,6 +92,30 @@
         document.getElementById("caseButton").addEventListener("click", function() {
             alert("Case #001 is opening soon, Detective!");
         });
+    const suspectButtons = document.querySelectorAll(".suspect-choice");
+const gameResult = document.getElementById("gameResult");
+const retryButton = document.getElementById("retryCase");
+
+suspectButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const suspect = button.dataset.suspect;
+
+        if (suspect === "Alex") {
+            gameResult.textContent =
+                "Alex is a possible suspect! More clues are needed.";
+        } else {
+            gameResult.textContent =
+                suspect + " is not ruled out yet. Investigate more clues!";
+        }
+
+        retryButton.hidden = false;
+    });
+});
+
+retryButton.addEventListener("click", function() {
+    gameResult.textContent = "";
+    retryButton.hidden = true;
+});
     </script>
 </body>
 </html>
