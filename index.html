@@ -92,30 +92,48 @@
         document.getElementById("caseButton").addEventListener("click", function() {
             alert("Case #001 is opening soon, Detective!");
         });
-    const suspectButtons = document.querySelectorAll(".suspect-choice");
+   const suspectButtons = document.querySelectorAll(".suspect-choice");
 const gameResult = document.getElementById("gameResult");
 const retryButton = document.getElementById("retryCase");
 
+let score = 0;
+let attempts = 0;
+
 suspectButtons.forEach(function(button) {
     button.addEventListener("click", function() {
+        if (attempts >= 3) {
+            gameResult.textContent = "Case finished! Click TRY AGAIN to restart.";
+            return;
+        }
+
         const suspect = button.dataset.suspect;
+        attempts++;
 
         if (suspect === "Alex") {
+            score += 10;
             gameResult.textContent =
-                "Alex is a possible suspect! More clues are needed.";
+                "Good investigation! Alex matches the footprint clue. +10 points. Score: " + score;
         } else {
             gameResult.textContent =
-                suspect + " is not ruled out yet. Investigate more clues!";
+                suspect + " is still a possibility. Check the footprint clue! Score: " + score;
         }
 
         retryButton.hidden = false;
+
+        if (suspect === "Alex") {
+            gameResult.textContent += " CASE SOLVED!";
+        }
     });
 });
 
 retryButton.addEventListener("click", function() {
+    score = 0;
+    attempts = 0;
     gameResult.textContent = "";
     retryButton.hidden = true;
 });
+
+
     </script>
 </body>
 </html>
