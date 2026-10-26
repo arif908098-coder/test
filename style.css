@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0e14;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    border-bottom: 1px solid #252b38;
+    background: #10141d;
+}
+
+.navbar h1 {
+    color: #ff4655;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.navbar span {
+    color: #9ca3af;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 90px;
+    background: radial-gradient(ellipse at top, #20253a, #0b0e14 70%);
+}
+
+.tag {
+    color: #ff4655;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.hero h2 {
+    font-size: clamp(36px, 6vw, 64px);
+    margin-bottom: 22px;
+}
+
+.description {
+    max-width: 580px;
+    margin: 0 auto 32px;
+    color: #a8b0c0;
+    line-height: 1.8;
+}
+
+button {
+    background: #ff4655;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #d92e40;
+    transform: translateY(-2px);
+}
+
+.cases {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 24px 80px;
+}
+
+.cases > h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.case-card {
+    max-width: 600px;
+    padding: 30px;
+    background: #141a25;
+    border: 1px solid #30394b;
+    border-left: 4px solid #ff4655;
+    border-radius: 8px;
+}
+
+.status {
+    color: #ff6875;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.case-card h3 {
+    font-size: 26px;
+    margin: 20px 0 12px;
+}
+
+.case-card p {
+    color: #a8b0c0;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #737d90;
+    border-top: 1px solid #252b38;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 20px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .case-card {
+        padding: 22px;
+    }
+}

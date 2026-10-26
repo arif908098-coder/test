@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Files | Detective HQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1>MYSTERY FILES</h1>
+        <span>DETECTIVE HQ</span>
+    </header>
+
+    <main class="hero">
+        <p class="tag">YOUR NEXT CASE AWAITS</p>
+        <h2>Every clue tells a story.</h2>
+        <p class="description">
+            Investigate mysterious cases, examine evidence,
+            question suspects and uncover the truth.
+        </p>
+        <button id="startButton">EXPLORE CASES →</button>
+    </main>
+
+    <section class="cases">
+        <h2>CLASSIFIED CASE FILES</h2>
+
+        <div class="case-card">
+            <span class="status">CASE #001 · EASY</span>
+            <h3>The Missing Necklace</h3>
+            <p>A valuable necklace has disappeared from a locked room.
+               Three suspects. One hidden truth.</p>
+            <button id="caseButton">OPEN CASE</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Mystery Files · Fictional Detective Game</p>
+    </footer>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            document.querySelector(".cases").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+
+        document.getElementById("caseButton").addEventListener("click", function() {
+            alert("Case #001 is opening soon, Detective!");
+        });
+    </script>
+</body>
+</html>
