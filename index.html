@@ -1,139 +1,143 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08060a">
     <title>Mystery Files | Detective HQ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="navbar">
-        <h1>MYSTERY FILES</h1>
-        <span>DETECTIVE HQ</span>
+        <a href="#" class="logo">MYSTERY<span> FILES</span></a>
+        <span class="classified">CLASSIFIED ARCHIVES</span>
     </header>
 
-    <main class="hero">
-        <p class="tag">YOUR NEXT CASE AWAITS</p>
-        <h2>Every clue tells a story.</h2>
-        <p class="description">
-            Investigate mysterious cases, examine evidence,
-            question suspects and uncover the truth.
-        </p>
-        <button id="startButton">EXPLORE CASES →</button>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="tag">THE TRUTH IS BURIED IN DARKNESS</p>
+                <h1>Every mystery<br>has a <span>dark side.</span></h1>
+                <p class="description">
+                    Enter a world of unsolved crimes, hidden secrets,
+                    suspicious strangers and evidence that changes everything.
+                </p>
+                <button id="startButton" class="primary-button">
+                    ENTER THE ARCHIVES <span>→</span>
+                </button>
+                <p class="warning">⚠ CASE FILES CONTAIN UNSETTLED MYSTERIES</p>
+            </div>
+            <div class="hero-symbol" aria-hidden="true">✦</div>
+        </section>
+
+        <section class="cases" id="cases">
+            <div class="section-heading">
+                <p class="tag">RESTRICTED ACCESS</p>
+                <h2>CLASSIFIED CASE FILES</h2>
+                <p>One case. Three suspects. Can you discover the truth?</p>
+            </div>
+
+            <article class="case-card">
+                <div class="case-top">
+                    <span class="case-number">CASE FILE № 001</span>
+                    <span class="status"><span class="status-dot"></span> UNSOLVED</span>
+                </div>
+                <div class="case-icon" aria-hidden="true">◇</div>
+                <p class="eyebrow">MYSTERY • INVESTIGATION</p>
+                <h3>The Missing Necklace</h3>
+                <p>
+                    At exactly 8 PM, a priceless diamond necklace vanished
+                    from a locked mansion room. Three people were nearby.
+                    One piece of evidence could expose the culprit.
+                </p>
+                <button id="caseButton" class="outline-button">
+                    INVESTIGATE CASE →
+                </button>
+            </article>
+        </section>
+
+        <section class="detective-game" id="detectiveGame">
+            <div class="game-header">
+                <p class="tag">INVESTIGATION IN PROGRESS</p>
+                <h2>The Missing <span>Necklace</span></h2>
+                <p>Read the statements. Study the evidence. Make your decision.</p>
+            </div>
+
+            <div class="case-details">
+                <div><span>LOCATION</span><strong>Blackwood Mansion</strong></div>
+                <div><span>TIME OF CRIME</span><strong>8:00 PM</strong></div>
+                <div><span>DETECTIVE SCORE</span><strong id="scoreDisplay">0 points</strong></div>
+            </div>
+
+            <h3 class="subheading">THE SUSPECTS</h3>
+
+            <div class="suspects">
+                <article class="suspect-card">
+                    <span class="suspect-number">SUSPECT 01</span>
+                    <div class="suspect-symbol">♟</div>
+                    <h3>Alex Morgan</h3>
+                    <p class="role">THE GARDENER</p>
+                    <p class="statement">"I was in the garden from 7:45 PM to 8:15 PM."</p>
+                    <button class="suspect-choice" data-suspect="Alex">ACCUSE ALEX</button>
+                </article>
+
+                <article class="suspect-card">
+                    <span class="suspect-number">SUSPECT 02</span>
+                    <div class="suspect-symbol">♟</div>
+                    <h3>Maya Rose</h3>
+                    <p class="role">THE HOUSE GUEST</p>
+                    <p class="statement">"I saw Alex enter the house at 7:55 PM."</p>
+                    <button class="suspect-choice" data-suspect="Maya">ACCUSE MAYA</button>
+                </article>
+
+                <article class="suspect-card">
+                    <span class="suspect-number">SUSPECT 03</span>
+                    <div class="suspect-symbol">♟</div>
+                    <h3>Ryan Blake</h3>
+                    <p class="role">THE LIBRARIAN</p>
+                    <p class="statement">"I was reading in the library all evening."</p>
+                    <button class="suspect-choice" data-suspect="Ryan">ACCUSE RYAN</button>
+                </article>
+            </div>
+
+            <div class="evidence">
+                <div class="evidence-icon">⌕</div>
+                <div>
+                    <p class="tag">EVIDENCE REPORT 001</p>
+                    <h3>The Muddy Footprint</h3>
+                    <p>
+                        Investigators found a muddy footprint inside the room.
+                        It matches the shoes Alex wore that evening.
+                        But does that prove Alex stole the necklace?
+                    </p>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <p id="gameResult" class="game-result" aria-live="polite">
+                    Your investigation is waiting. Choose a suspect to begin.
+                </p>
+                <button id="retryCase" class="outline-button" hidden>
+                    RESTART INVESTIGATION ↻
+                </button>
+            </div>
+        </section>
+
+        <section class="closing">
+            <p class="tag">THE ARCHIVES NEVER SLEEP</p>
+            <h2>Every clue matters.</h2>
+            <p>Look closer. Question everything. Trust the evidence.</p>
+        </section>
     </main>
 
-    <section class="cases">
-        <h2>CLASSIFIED CASE FILES</h2>
-
-        <div class="case-card">
-            <span class="status">CASE #001 · EASY</span>
-            <h3>The Missing Necklace</h3>
-            <p>A valuable necklace has disappeared from a locked room.
-               Three suspects. One hidden truth.</p>
-            <button id="caseButton">OPEN CASE</button>
-        </div>
-    </section>
-    <section class="detective-game" id="detectiveGame">
-        <p class="tag">DETECTIVE CHALLENGE</p>
-        <h2>CASE #001: THE MISSING NECKLACE</h2>
-        <p class="game-intro">
-            A diamond necklace disappeared from a locked room at 8 PM.
-            Three suspects were questioned. Examine their statements
-            and identify who is lying!
-        </p>
-
-        <div class="suspects">
-            <div class="suspect-card">
-                <h3>🧑 Suspect 1: Alex</h3>
-                <p>"I was in the garden from 7:45 PM to 8:15 PM."</p>
-            </div>
-
-            <div class="suspect-card">
-                <h3>🧑 Suspect 2: Maya</h3>
-                <p>"I saw Alex enter the house at 7:55 PM."</p>
-            </div>
-
-            <div class="suspect-card">
-                <h3>🧑 Suspect 3: Ryan</h3>
-                <p>"I was reading in the library all evening."</p>
-            </div>
-        </div>
-
-        <div class="clue-box">
-            <h3>🔎 Evidence Found</h3>
-            <p>
-                A muddy footprint was discovered inside the house.
-                It matches the shoes Alex wore that evening.
-            </p>
-        </div>
-
-        <h3 class="question">Who is your main suspect?</h3>
-
-        <div class="suspect-options">
-            <button class="suspect-choice" data-suspect="Alex">Alex</button>
-            <button class="suspect-choice" data-suspect="Maya">Maya</button>
-            <button class="suspect-choice" data-suspect="Ryan">Ryan</button>
-        </div>
-
-        <p id="gameResult" class="game-result" aria-live="polite"></p>
-        <button id="retryCase" hidden>TRY AGAIN</button>
-    </section>
     <footer>
-        <p>© 2026 Mystery Files · Fictional Detective Game</p>
+        <p>© 2026 MYSTERY FILES</p>
+        <span>FICTIONAL DETECTIVE EXPERIENCE</span>
     </footer>
 
-    <script>
-        document.getElementById("startButton").addEventListener("click", function() {
-            document.querySelector(".cases").scrollIntoView({
-                behavior: "smooth"
-            });
-        });
-
-        document.getElementById("caseButton").addEventListener("click", function() {
-            alert("Case #001 is opening soon, Detective!");
-        });
-   const suspectButtons = document.querySelectorAll(".suspect-choice");
-const gameResult = document.getElementById("gameResult");
-const retryButton = document.getElementById("retryCase");
-
-let score = 0;
-let attempts = 0;
-
-suspectButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        if (attempts >= 3) {
-            gameResult.textContent = "Case finished! Click TRY AGAIN to restart.";
-            return;
-        }
-
-        const suspect = button.dataset.suspect;
-        attempts++;
-
-        if (suspect === "Alex") {
-            score += 10;
-            gameResult.textContent =
-                "Good investigation! Alex matches the footprint clue. +10 points. Score: " + score;
-        } else {
-            gameResult.textContent =
-                suspect + " is still a possibility. Check the footprint clue! Score: " + score;
-        }
-
-        retryButton.hidden = false;
-
-        if (suspect === "Alex") {
-            gameResult.textContent += " CASE SOLVED!";
-        }
-    });
-});
-
-retryButton.addEventListener("click", function() {
-    score = 0;
-    attempts = 0;
-    gameResult.textContent = "";
-    retryButton.hidden = true;
-});
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+```
