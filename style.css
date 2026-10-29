@@ -605,4 +605,220 @@ footer {
         transition-duration: 0.01ms !important;
     }
 }
-```
+
+/* ===== MYSTERY FILES: VISIBILITY & MOBILE FIX ===== */
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #08070b;
+}
+
+body {
+    background: #08070b !important;
+    color: #f5eee8 !important;
+}
+
+header,
+main,
+section,
+footer {
+    color: inherit;
+}
+
+.cases,
+.detective-game {
+    background: #100c12 !important;
+    color: #f5eee8 !important;
+}
+
+.hero {
+    background-color: #08070b;
+    color: #fff8f2 !important;
+}
+
+h1,
+h2,
+h3,
+p,
+.tag,
+.description,
+.eyebrow,
+.statement,
+.case-number,
+.classified,
+.subheading {
+    color: #f5eee8;
+}
+
+.hero h1 span,
+.game-header h2 span {
+    color: #ff536b;
+}
+
+.description,
+.section-heading > p,
+.case-card > p,
+.suspect-card p,
+.evidence p,
+.closing p {
+    color: #d7cbd2 !important;
+}
+
+.case-card,
+.suspect-card,
+.evidence {
+    background: linear-gradient(145deg, #1b111a, #100c12) !important;
+    color: #fff8f2 !important;
+    border: 1px solid #54303e;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+}
+
+.case-card h3,
+.suspect-card h3,
+.evidence h3 {
+    color: #fff4eb !important;
+}
+
+.case-card p,
+.suspect-card p,
+.evidence p {
+    color: #d9cbd2 !important;
+}
+
+.tag,
+.eyebrow,
+.case-number,
+.suspect-number,
+.role {
+    color: #ff8b9d !important;
+}
+
+.primary-button,
+.suspect-choice {
+    background: linear-gradient(110deg, #a90830, #e51d46) !important;
+    color: #ffffff !important;
+    border: 1px solid #ff6b82;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.outline-button {
+    background: transparent;
+    color: #fff0e8 !important;
+    border: 1px solid #e24a65;
+    cursor: pointer;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.primary-button:hover,
+.suspect-choice:hover,
+.outline-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(229, 29, 70, 0.3);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status {
+    color: #ff9eac !important;
+}
+
+.status-dot {
+    background: #ff405e;
+}
+
+.game-result {
+    color: #ffe2a0 !important;
+    line-height: 1.7;
+}
+
+.case-details {
+    color: #f5eee8;
+}
+
+.case-details span {
+    color: #ff9eac !important;
+}
+
+.closing {
+    background: #100c12;
+    color: #fff8f2;
+}
+
+footer {
+    background: #08070b;
+    color: #cbbcc4 !important;
+}
+
+footer p,
+footer span {
+    color: #cbbcc4 !important;
+}
+
+/* Keep the website readable on phones */
+
+img {
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: clamp(16px, 4.5vw, 22px);
+    }
+
+    .classified {
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 9vw, 48px);
+        line-height: 1.15;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .case-card,
+    .suspect-card,
+    .evidence {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .primary-button,
+    .outline-button,
+    .suspect-choice {
+        min-height: 46px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
