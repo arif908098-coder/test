@@ -34,7 +34,7 @@
             🏆 LEADERBOARD
         </button>
     </div>
-</div>
+</div
     <header class="navbar">
         <a href="#" class="logo">MYSTERY<span> FILES</span></a>
         <span class="classified">CLASSIFIED ARCHIVES</span>
@@ -78,6 +78,27 @@
                     One piece of evidence could expose the culprit.
                 </p>
                 <button id="caseButton" class="outline-button">
+                    INVESTIGATE CASE →
+                </button>
+            </article>
+                        <article class="case-card">
+                <div class="case-top">
+                    <span class="case-number">CASE FILE № 002</span>
+                    <span class="status"><span class="status-dot"></span> UNSOLVED</span>
+                </div>
+
+                <div class="case-icon" aria-hidden="true">☾</div>
+
+                <p class="eyebrow">MYSTERY • INVESTIGATION</p>
+                <h3>The Midnight Murder</h3>
+
+                <p>
+                    At midnight, Mr. Edward Blackwood was found dead
+                    inside his mansion. Three people were present that night.
+                    Can you uncover the truth?
+                </p>
+
+                <button id="midnightCaseButton" class="outline-button">
                     INVESTIGATE CASE →
                 </button>
             </article>
@@ -149,6 +170,86 @@
                 </button>
             </div>
         </section>
+        <!-- CASE 002: MIDNIGHT MURDER INVESTIGATION -->
+
+<section class="detective-game" id="midnightGame">
+    <div class="game-header">
+        <p class="tag">CASE FILE 002 • INVESTIGATION</p>
+        <h2>The Midnight <span>Murder</span></h2>
+        <p>Study the evidence. Question the suspects. Discover the truth.</p>
+    </div>
+
+    <div class="case-details">
+        <div>
+            <span>LOCATION</span>
+            <strong>Blackwood Mansion</strong>
+        </div>
+        <div>
+            <span>TIME</span>
+            <strong>12:00 AM</strong>
+        </div>
+        <div>
+            <span>YOUR SCORE</span>
+            <strong id="midnightScore">0 points</strong>
+        </div>
+    </div>
+
+    <h3 class="subheading">THE SUSPECTS</h3>
+
+    <div class="suspects">
+        <article class="suspect-card">
+            <span class="suspect-number">SUSPECT 01</span>
+            <div class="suspect-symbol">♟</div>
+            <h3>Daniel Black</h3>
+            <p class="role">THE BUSINESS PARTNER</p>
+            <p class="statement">"I left the mansion before midnight."</p>
+            <button class="midnight-choice" data-suspect="Daniel">
+                INVESTIGATE DANIEL
+            </button>
+        </article>
+
+        <article class="suspect-card">
+            <span class="suspect-number">SUSPECT 02</span>
+            <div class="suspect-symbol">♟</div>
+            <h3>Olivia Reed</h3>
+            <p class="role">THE HOUSEKEEPER</p>
+            <p class="statement">"I was cleaning the dining room."</p>
+            <button class="midnight-choice" data-suspect="Olivia">
+                INVESTIGATE OLIVIA
+            </button>
+        </article>
+
+        <article class="suspect-card">
+            <span class="suspect-number">SUSPECT 03</span>
+            <div class="suspect-symbol">♟</div>
+            <h3>Victor Gray</h3>
+            <p class="role">THE FAMILY LAWYER</p>
+            <p class="statement">"I was in the study until midnight."</p>
+            <button class="midnight-choice" data-suspect="Victor">
+                INVESTIGATE VICTOR
+            </button>
+        </article>
+    </div>
+
+    <div class="evidence">
+        <div class="evidence-icon">⌕</div>
+        <div>
+            <p class="tag">EVIDENCE REPORT 002</p>
+            <h3>The Stopped Clock</h3>
+            <p>
+                A clock in the study stopped at 11:40 PM.
+                However, another clock in the hallway shows
+                that it was still working after midnight.
+            </p>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <p id="midnightResult" class="game-result">
+            Your investigation is waiting. Choose a suspect.
+        </p>
+    </div>
+</section>
 
         <section class="closing">
             <p class="tag">THE ARCHIVES NEVER SLEEP</p>

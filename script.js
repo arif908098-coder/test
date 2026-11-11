@@ -86,3 +86,52 @@ retryButton.addEventListener("click", function () {
 
     retryButton.hidden = true;
 });
+
+// ===== CASE 002: THE MIDNIGHT MURDER =====
+
+const midnightCaseButton = document.getElementById("midnightCaseButton");
+const midnightGame = document.getElementById("midnightGame");
+
+if (midnightCaseButton && midnightGame) {
+    midnightCaseButton.addEventListener("click", function () {
+        midnightGame.scrollIntoView({
+            behavior: "smooth"
+        });  
+    });
+}
+// ===== MIDNIGHT MURDER GAME =====
+
+const midnightButtons = document.querySelectorAll(".midnight-choice");
+const midnightResult = document.getElementById("midnightResult");
+const midnightScore = document.getElementById("midnightScore");
+
+let midnightAttempts = 0;
+let midnightSolved = false;
+
+midnightButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        if (midnightSolved || midnightAttempts >= 3) return;
+
+        const suspect = button.dataset.suspect;
+        midnightAttempts++;
+
+        if (suspect === "Victor") {
+            midnightSolved = true;
+            midnightScore.textContent = "100 points";
+            midnightResult.textContent =
+                "CASE SOLVED! Victor's statement contradicts the clock evidence. You earned 100 points!";
+        } else {
+            midnightResult.textContent =
+                suspect + " is not confirmed. Keep investigating! Attempts: " +
+                midnightAttempts + "/3.";
+        }
+
+        button.disabled = true;
+
+        if (midnightSolved || midnightAttempts >= 3) {
+            midnightButtons.forEach(function(otherButton) {
+                otherButton.disabled = true;
+            });
+        }
+    });
+});
